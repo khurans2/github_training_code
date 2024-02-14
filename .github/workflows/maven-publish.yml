@@ -26,5 +26,8 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
+    - name: mkdir and copy 
+      run:  mkdir /opt/tomcat | cp -R /home/runner/work/github_training_code/github_training_code/target/my-app.war /opt/tomcat/
+
     - name: Build the Docker image
       run: docker build --tag my-image-name:$(date +%s) --file Dockerfile .
