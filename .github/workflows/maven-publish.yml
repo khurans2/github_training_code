@@ -26,9 +26,10 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-
+    - name : mkdir dir
+      run : /opt/tomcat
     - name: copy dockerfile
-      run: mkdir /opt/tomcat/ | cp Dockerfile /opt/tomcat/ | cd /opt/tomcat/
+      run: cp Dockerfile /opt/tomcat/ | cd /opt/tomcat/
       
     - name: Build the Docker image
       run: docker build --tag my-image-name:$(date +%s) --file Dockerfile .
