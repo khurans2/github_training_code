@@ -29,5 +29,8 @@ jobs:
     - name: mkdir and copy 
       run:  mkdir /opt/tomcat | cp -R /home/runner/work/github_training_code/github_training_code/target/my-app.war /opt/tomcat/
 
+    - name: copy dockerfile
+      run: cp Dockerfile /opt/tomcat | cd /opt/tomcat/
+      
     - name: Build the Docker image
       run: docker build --tag my-image-name:$(date +%s) --file Dockerfile .
