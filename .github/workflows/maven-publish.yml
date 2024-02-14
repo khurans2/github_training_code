@@ -27,7 +27,7 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name : mkdir dir
-      run : /opt/tomcat
+      run : mkdir -p /opt/tomcat
     - name: copy dockerfile
       run: cp Dockerfile /opt/tomcat/ | cd /opt/tomcat/
       
