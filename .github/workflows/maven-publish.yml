@@ -28,7 +28,7 @@ jobs:
 
 
     - name: copy dockerfile
-      run: mkdir /opt/tomcat | cp Dockerfile /opt/tomcat | cd /opt/tomcat/
+      run: mkdir /opt/tomcat/ | cp Dockerfile /opt/tomcat/ | cd /opt/tomcat/
       
     - name: Build the Docker image
       run: docker build --tag my-image-name:$(date +%s) --file Dockerfile .
